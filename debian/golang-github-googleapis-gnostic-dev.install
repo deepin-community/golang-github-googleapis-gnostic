@@ -1,0 +1,6 @@
+_build/src/github.com/googleapis/gnostic/OpenAPIv2        usr/share/gocode/src/github.com/googleapis/gnostic/
+_build/src/github.com/googleapis/gnostic/OpenAPIv3        usr/share/gocode/src/github.com/googleapis/gnostic/
+_build/src/github.com/googleapis/gnostic/compiler         usr/share/gocode/src/github.com/googleapis/gnostic/
+_build/src/github.com/googleapis/gnostic/extensions       usr/share/gocode/src/github.com/googleapis/gnostic/
+_build/src/github.com/googleapis/gnostic/jsonschema       usr/share/gocode/src/github.com/googleapis/gnostic/
+_build/src/github.com/googleapis/gnostic/apps/petstore-builder usr/share/gocode/src/github.com/googleapis/gnostic/apps
