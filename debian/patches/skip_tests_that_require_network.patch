@@ -1,0 +1,37 @@
+Description: Skip tests that require network
+Author: Arnaud Rebillout <arnaud.rebillout@collabora.com>
+Forwarded: not-needed
+Last-Update: 2018-06-14
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/gnostic_test.go
++++ b/gnostic_test.go
+@@ -80,24 +80,28 @@
+ }
+ 
+ func TestRemotePetstoreJSON(t *testing.T) {
++	t.Skip("DM - skip test that requires network")
+ 	testNormal(t,
+ 		"https://raw.githubusercontent.com/googleapis/openapi-compiler/master/examples/v2.0/json/petstore.json",
+ 		"test/v2.0/petstore.text")
+ }
+ 
+ func TestRemotePetstoreYAML(t *testing.T) {
++	t.Skip("DM - skip test that requires network")
+ 	testNormal(t,
+ 		"https://raw.githubusercontent.com/googleapis/openapi-compiler/master/examples/v2.0/yaml/petstore.yaml",
+ 		"test/v2.0/petstore.text")
+ }
+ 
+ func TestRemoteSeparateYAML(t *testing.T) {
++	t.Skip("DM - skip test that requires network")
+ 	testNormal(t,
+ 		"https://raw.githubusercontent.com/googleapis/openapi-compiler/master/examples/v2.0/yaml/petstore-separate/spec/swagger.yaml",
+ 		"test/v2.0/yaml/petstore-separate/spec/swagger.text")
+ }
+ 
+ func TestRemoteSeparateJSON(t *testing.T) {
++	t.Skip("DM - skip test that requires network")
+ 	testNormal(t,
+ 		"https://raw.githubusercontent.com/googleapis/openapi-compiler/master/examples/v2.0/json/petstore-separate/spec/swagger.json",
+ 		"test/v2.0/yaml/petstore-separate/spec/swagger.text")
