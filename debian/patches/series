@@ -1,0 +1,4 @@
+skip_tests_that_require_network.patch
+drop_go-get.patch
+script_path.patch
+add-parse-document.patch

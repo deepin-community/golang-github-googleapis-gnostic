@@ -1,0 +1,18 @@
+Last-Update: 2018-06-13
+Forwarded: not-needed
+Author: Dmitry Smirnov <onlyjob@debian.org>
+Description: debianize relative path.
+
+--- a/gnostic.go
++++ b/gnostic.go
+@@ -11,9 +11,9 @@
+ // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ // See the License for the specific language governing permissions and
+ // limitations under the License.
+ 
+-//go:generate ./COMPILE-PROTOS.sh
++//go:generate ../../../../../COMPILE-PROTOS.sh
+ 
+ // Gnostic is a tool for building better REST APIs through knowledge.
+ //
+ // Gnostic reads declarative descriptions of REST APIs that conform

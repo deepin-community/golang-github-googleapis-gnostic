@@ -1,0 +1,18 @@
+Last-Update: 2018-06-13
+Forwarded: not-needed
+Author: Dmitry Smirnov <onlyjob@debian.org>
+Description: prevents download on build time.
+
+--- a/COMPILE-PROTOS.sh
++++ b/COMPILE-PROTOS.sh
+@@ -14,10 +14,8 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ #
+ 
+-go get github.com/golang/protobuf/protoc-gen-go
+-
+ protoc \
+ --go_out=Mgoogle/protobuf/any.proto=github.com/golang/protobuf/ptypes/any:. \
+ OpenAPIv2/OpenAPIv2.proto 
+ 

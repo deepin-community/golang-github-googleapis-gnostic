@@ -1,4 +1,26 @@
 #!/usr/bin/make -f
 
+export DH_GOLANG_INSTALL_ALL := 0
+export DH_GOLANG_GO_GENERATE := 1
+export DH_GOLANG_INSTALL_EXTRA := examples/ generate-gnostic/test/ test/
+export DH_GOLANG_BUILDPKG := \
+  github.com/googleapis/gnostic/compiler \
+  github.com/googleapis/gnostic/extensions \
+  github.com/googleapis/gnostic/jsonschema \
+  github.com/googleapis/gnostic/OpenAPIv2 \
+  github.com/googleapis/gnostic/OpenAPIv3 \
+  github.com/googleapis/gnostic/apps/petstore-builder
+
+PKG = golang-github-googleapis-gnostic-dev
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang --builddirectory=_build
+
+execute_after_dh_install:
+	mv debian/$(PKG)/usr/share/gocode/src/github.com/googleapis/gnostic/OpenAPIv2 \
+	   debian/$(PKG)/usr/share/gocode/src/github.com/googleapis/gnostic/openapiv2
+	mv debian/$(PKG)/usr/share/gocode/src/github.com/googleapis/gnostic/OpenAPIv3 \
+	   debian/$(PKG)/usr/share/gocode/src/github.com/googleapis/gnostic/openapiv3
+
+override_dh_auto_install:
+	# dh_auto_install --destdir=debian/tmp
